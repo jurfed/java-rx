@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.Objects;
+
 public class Students {
     private String name;
     private int year;
@@ -42,5 +44,20 @@ public class Students {
                 ", year=" + year +
                 ", speciality='" + speciality + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Students students = (Students) o;
+        return year == students.year &&
+                Objects.equals(name, students.name) &&
+                Objects.equals(speciality, students.speciality);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, year, speciality);
     }
 }
