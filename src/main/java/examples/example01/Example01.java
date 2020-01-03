@@ -1,4 +1,4 @@
-package examples;
+package examples.example01;
 
 import rx.schedulers.Schedulers;
 import rx.subjects.BehaviorSubject;
