@@ -1,9 +1,11 @@
 package examples.example02;
 
 import rx.Observable;
+import rx.Subscriber;
 import rx.Subscription;
 
 import java.util.Arrays;
+import java.util.jar.JarOutputStream;
 
 public class Example02 {
 
@@ -20,7 +22,7 @@ public class Example02 {
         Observable<Student> studentObservable = Observable.just(student1, student2, student3);
         Subscription subscription = studentObservable.subscribe(mySubscriber);
 
-
+//-----------------------------------------------------------------------------------------------
         System.out.println("\nExample 2.2 !!!!!!!!!!!!!!!!!!!!!");
         Iterable<Student> students = Arrays.asList(student1, student2, student3);
         studentObservable = Observable.from(students);

@@ -1,17 +1,17 @@
-package examples.example02;
+package examples.example03;
 
 import java.util.Objects;
 
 /**
  * Subjects
  */
-public class Student {
+public class Employee {
 
     private String name;
     private int age;
     private String speciality;
 
-    public Student(String name, int age, String speciality) {
+    public Employee(String name, int age, String speciality) {
         this.name = name;
         this.age = age;
         this.speciality = speciality;
@@ -46,7 +46,7 @@ public class Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
+        Employee student = (Employee) o;
         return age == student.age &&
                 Objects.equals(name, student.name) &&
                 Objects.equals(speciality, student.speciality);
