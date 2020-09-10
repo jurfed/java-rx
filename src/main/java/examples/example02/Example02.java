@@ -10,10 +10,10 @@ import java.util.jar.JarOutputStream;
 public class Example02 {
 
     public Example02() {
-        System.out.println("\nExamples 2 !!!!!!!!!!!!!!!!!!!!!");
+System.out.println("\nExamples 2 !!!!!!!!!!!!!!!!!!!!!");
         MySubscriber mySubscriber = new MySubscriber();
 
-        System.out.println("\nExample 2.1 !!!!!!!!!!!!!!!!!!!!!");
+System.out.println("\nExample 2.1 !!!!!!!!!!!!!!!!!!!!!");
 
         Student student1 = new Student("Ivan", 23, "doctor");
         Student student2 = new Student("Vasya", 19, "engineer");

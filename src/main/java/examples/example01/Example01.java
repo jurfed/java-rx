@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class Example01 {
 
     public Example01() throws InterruptedException {
-        System.out.println("Publish subject: 1, 2, 3, 4");
+System.out.println("Publish subject: 1, 2, 3, 4");
 
         PublishSubject<Integer> subject = PublishSubject.create();
         subject.onNext(1);
@@ -24,7 +24,7 @@ public class Example01 {
         subject.onNext(3);
         subject.onNext(4);
 
-        System.out.println("\nReplay subject:");
+System.out.println("\nReplay subject:");
         ReplaySubject<Integer> replaySubject = ReplaySubject.create();
         replaySubject.subscribe(integer -> System.out.println("Early:" + integer));
         replaySubject.onNext(1);
@@ -34,7 +34,7 @@ public class Example01 {
         replaySubject.onNext(3);
         replaySubject.onNext(4);
 
-        System.out.println("\nReplay subject with time scheduler 1, 2, 3, 4:");
+System.out.println("\nReplay subject with time scheduler 1, 2, 3, 4:");//хранит в буфере все прошлые значения
         ReplaySubject<Integer> s = ReplaySubject.createWithTime(150, TimeUnit.MILLISECONDS,
                 Schedulers.immediate());
         s.onNext(1);
@@ -48,7 +48,7 @@ public class Example01 {
         s.subscribe(v -> System.out.println("Late: " + v));
 
 
-        System.out.println("\nBehaviorSubject: ");
+System.out.println("\nBehaviorSubject: ");//хранит в буфере только последнее значение + все новые
         BehaviorSubject<Integer> s2 = BehaviorSubject.create();
         s2.onNext(1);
         s2.onNext(2);

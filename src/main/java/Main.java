@@ -1,13 +1,18 @@
 import examples.example01.Example01;
 import examples.example02.Example02;
 import examples.example03.Example03;
+import examples.example04_create.Example04_1;
+import examples.example04_create.Example04_2;
+import examples.example05_filters.Example05;
+import examples.example06_inspection.Example06;
+import examples.example07_aggregation.Example07;
 import rx.Observable;
 import rx.Subscription;
 
-import java.security.spec.RSAOtherPrimeInfo;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         /**
          * Subjects
@@ -23,6 +28,16 @@ public class Main {
          * Custom Action1
          */
         new Example03();
+
+        /**
+         * Создание Observable
+         */
+//        new Example04_1();
+        new Example04_2();
+
+        new Example05();//filters
+        new Example06();//inspections
+        new Example07();//aggregation
 
 
         Observable<Integer> studentObservable = Observable.just(2, 30, 22, 5, 60, 2);
