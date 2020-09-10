@@ -9,6 +9,7 @@ import examples.example07_aggregation.Example07;
 import examples.example07_aggregation.Example07_2;
 import examples.example07_aggregation.Example07_3;
 import examples.example08_transformation.Example08;
+import examples.example09.Example09;
 import rx.Observable;
 import rx.Subscription;
 
@@ -44,6 +45,7 @@ public class Main {
         new Example07_2();//Aggregation to collections
         new Example07_3();//toMap, groupBy
         new Example08();//Transformation of sequences
+        new Example09();//более сложные действия над последовательностью
 
 
         Observable<Integer> studentObservable = Observable.just(2, 30, 22, 5, 60, 2);
