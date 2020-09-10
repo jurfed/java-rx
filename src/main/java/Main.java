@@ -6,6 +6,9 @@ import examples.example04_create.Example04_2;
 import examples.example05_filters.Example05;
 import examples.example06_inspection.Example06;
 import examples.example07_aggregation.Example07;
+import examples.example07_aggregation.Example07_2;
+import examples.example07_aggregation.Example07_3;
+import examples.example08_transformation.Example08;
 import rx.Observable;
 import rx.Subscription;
 
@@ -38,6 +41,9 @@ public class Main {
         new Example05();//filters
         new Example06();//inspections
         new Example07();//aggregation
+        new Example07_2();//Aggregation to collections
+        new Example07_3();//toMap, groupBy
+        new Example08();//Transformation of sequences
 
 
         Observable<Integer> studentObservable = Observable.just(2, 30, 22, 5, 60, 2);

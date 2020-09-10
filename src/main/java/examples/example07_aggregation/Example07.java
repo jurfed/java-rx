@@ -51,5 +51,23 @@ public class Example07 {
 //sout: reduce: 64
 //      reduce: Completed
         System.out.println();
+
+
+//scan - похож на reduce, но выдаст все промежуточные результаты
+        values
+                .scan((integer, integer2) -> integer + integer2 + 1)
+                .subscribe(new PrintSubscriber("scan"));
+//sout: scan: 1
+//scan: 4
+//scan: 8
+//scan: 13
+//scan: 19
+//scan: 26
+//scan: 34
+//scan: 43
+//scan: 53
+//scan: 64
+//scan: Completed
+        System.out.println();
     }
 }
