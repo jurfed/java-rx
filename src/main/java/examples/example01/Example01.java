@@ -14,7 +14,12 @@ public class Example01 {
 
         PublishSubject<Integer> subject = PublishSubject.create();
         subject.onNext(1);
+
         subject.subscribe(System.out::println);//подписываемся и получаем дальнейшие сообщения
+
+        MyAction1 myAction1 = new MyAction1();
+        subject.subscribe(myAction1::call);//подписываемся и получаем дальнейшие сообщения вторым способом
+
         subject.onNext(2);
         subject.onNext(3);
         subject.onNext(4);
