@@ -10,13 +10,17 @@ import examples.example07_aggregation.Example07_2;
 import examples.example07_aggregation.Example07_3;
 import examples.example08_transformation.Example08;
 import examples.example09.Example09;
+import examples.example09.Example09_2;
+import examples.example11_buffer_time.Example11;
+import examples.exmaple10_combine.Example10;
 import rx.Observable;
 import rx.Subscription;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void main(String[] args) throws InterruptedException, IOException, ExecutionException {
 
         /**
          * Subjects
@@ -45,17 +49,16 @@ public class Main {
         new Example07_2();//Aggregation to collections
         new Example07_3();//toMap, groupBy
         new Example08();//Transformation of sequences
-        new Example09();//более сложные действия над последовательностью
+        new Example09();//более сложные действия над последовательностью - do
+        new Example09_2();//forEach, first, last, single, ...
+        new Example10();//forEach, first, last, single, ...
+        new Example11();//buffer, buffer by time
 
 
-        Observable<Integer> studentObservable = Observable.just(2, 30, 22, 5, 60, 2);
-        Observable<Integer> studentObservable2 = Observable.just(1, 2, 3, 4, 5, 6);
-
-        Subscription subscription = studentObservable.combineLatest(studentObservable, studentObservable2, (integer, integer2) -> integer + integer2).subscribe(
-                integer -> System.out.println(integer), throwable -> System.out.println(), () -> System.out.println());
 
 
-        studentObservable.startWith(100).distinct().subscribe(integer -> System.out.println(integer));
+
+
 
     }
 }
